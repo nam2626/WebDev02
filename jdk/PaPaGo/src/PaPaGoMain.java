@@ -10,6 +10,8 @@ import java.net.URLEncoder;
 
 import javax.swing.JOptionPane;
 
+import org.json.JSONObject;
+
 public class PaPaGoMain {
 	/**
 	 * 
@@ -55,6 +57,9 @@ public class PaPaGoMain {
 				if(str == null) break;
 				msg += str;
 			}
+			//번역내용만 msg에 저장
+			JSONObject json = new JSONObject(msg);
+			msg = json.getJSONObject("message").getJSONObject("result").getString("translatedText");
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		} catch (MalformedURLException e) {
