@@ -8,6 +8,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
+import javax.swing.JOptionPane;
+
 public class PaPaGoMain {
 	/**
 	 * 
@@ -48,7 +50,11 @@ public class PaPaGoMain {
 				br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
 			}
 			msg = new String();
-			
+			while(true) {
+				String str = br.readLine();
+				if(str == null) break;
+				msg += str;
+			}
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		} catch (MalformedURLException e) {
@@ -56,14 +62,13 @@ public class PaPaGoMain {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 
-		
-		
 		return msg;
 	}
 	
 	
 	public static void main(String[] args) {
-		
+		String text = JOptionPane.showInputDialog("번역할 내용을 입력하세요");
+		System.out.println(papagoTranslate("en", text));
 	}
 
 }
