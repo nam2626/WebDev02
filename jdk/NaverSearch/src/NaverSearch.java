@@ -11,6 +11,9 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 public class NaverSearch {
 	/**
 	 * 네이버 블로그 검색 결과를 받음 
@@ -48,7 +51,14 @@ public class NaverSearch {
 				if(str == null) break;
 				result += str;
 			}
-			
+			JSONObject json = new JSONObject(result);
+			JSONArray arr = json.getJSONArray("items");
+			result = "";
+			for(int i=0;i<arr.length();i++) {
+				JSONObject obj = (JSONObject) arr.get(i);
+				result += obj.getString("title") + "\t" + obj.getString("bloggername") + "\t"
+						+ obj.getString("link") + "\n";
+			}
 			System.out.println(result);
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
