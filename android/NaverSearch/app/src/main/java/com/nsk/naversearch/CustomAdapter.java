@@ -52,4 +52,8 @@ public class CustomAdapter extends BaseAdapter {
     public void addItem(ItemVO vo){
         list.add(vo);
     }
+
+    public void clear() {
+        list.clear();
+    }
 }
