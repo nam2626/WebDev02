@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
         protected String doInBackground(String... strings) {
             Log.d("PAPAGO", "doInBackground: "+strings[0]);
             String result = null;
-            String clientId = "클라이언트 아이디";
-            String clientSecret = "클라이언트 시크릿";
+            String clientId = "9IEElpSYKwxvuax9FsIh";
+            String clientSecret = "bBrxBHQPu0";
             String apiUrl = "https://openapi.naver.com/v1/papago/n2mt";
             HttpURLConnection con = null;
             DataOutputStream dos = null;
