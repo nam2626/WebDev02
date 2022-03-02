@@ -2,13 +2,17 @@ package com.nsk.naversearch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,6 +27,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
     EditText edtSearch;
@@ -45,6 +50,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 SearchTask task = new SearchTask();
                 task.execute(edtSearch.getText().toString());
+            }
+        });
+
+        listResult.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                ItemVO vo = (ItemVO) adapter.getItem(i);
+//                Toast.makeText(MainActivity.this,vo.getLink(),Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(vo.getLink()));
+                startActivity(intent);
             }
         });
     }
