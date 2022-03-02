@@ -22,7 +22,9 @@ public class CustomAdapter extends BaseAdapter {
     public void addItem(BookVO vo){
         list.add(vo);
     }
-
+    public void clear(){
+        list.clear();
+    }
     @Override
     public int getCount() {
         return list.size();

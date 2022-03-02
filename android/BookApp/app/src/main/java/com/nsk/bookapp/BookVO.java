@@ -4,11 +4,21 @@ public class BookVO {
     private String title;
     private String info;
     private String thumnail;
+    private String link;
 
-    public BookVO(String title, String info, String thumnail) {
+    public BookVO(String title, String info, String thumnail, String link) {
         this.title = title;
         this.info = info;
         this.thumnail = thumnail;
+        this.link = link;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 
     public String getTitle() {
