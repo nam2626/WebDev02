@@ -2,10 +2,13 @@ package com.nsk.bookapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -45,6 +48,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 BookTask task = new BookTask();
                 task.execute(edtSearch.getText().toString());
+            }
+        });
+
+        lstResult.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                BookVO vo = (BookVO) adapter.getItem(i);
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(vo.getLink()));
+                startActivity(intent);
             }
         });
     }
@@ -89,7 +101,8 @@ public class MainActivity extends AppCompatActivity {
                 JSONArray arr = json.getJSONArray("items");
                 for(int i=0;i<arr.length();i++) {
                     JSONObject obj = (JSONObject) arr.get(i);
-                    String title = obj.getString("title");
+                    String title = obj.getString("title")
+                            .replace("<b>","").replace("</b>","");
                     String author = obj.getString("author");
                     String publisher = obj.getString("publisher");
                     String thumnail = obj.getString("image");
