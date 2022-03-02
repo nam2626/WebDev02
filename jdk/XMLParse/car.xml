@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+	<record>
+		<mno>WBSWD9C51AP640536</mno>
+		<model>Monte Carlo</model>
+		<year>1999</year>
+		<maker>Chevrolet</maker>
+		<price>1248</price>
+	</record>
+	<record>
+		<mno>2G4WD532251463810</mno>
+		<model>850</model>
+		<year>1995</year>
+		<maker>Volvo</maker>
+		<price>1806</price>
+	</record>
+	<record>
+		<mno>1GD312CG1CF278627</mno>
+		<model>530</model>
+		<year>2004</year>
+		<maker>BMW</maker>
+		<price>4420</price>
+	</record>
+	<record>
+		<mno>WBADT63401C465787</mno>
+		<model>Bronco</model>
+		<year>1987</year>
+		<maker>Ford</maker>
+		<price>3841</price>
+	</record>
+	<record>
+		<mno>1G6KD57Y36U981807</mno>
+		<model>LX</model>
+		<year>2002</year>
+		<maker>Lexus</maker>
+		<price>3163</price>
+	</record>
+	<record>
+		<mno>KMHEC4A49DA043902</mno>
+		<model>Park Avenue</model>
+		<year>2003</year>
+		<maker>Buick</maker>
+		<price>3268</price>
+	</record>
+	<record>
+		<mno>1FBNE3BL8DD785755</mno>
+		<model>Grand Prix</model>
+		<year>1964</year>
+		<maker>Pontiac</maker>
+		<price>1781</price>
+	</record>
+	<record>
+		<mno>JN1EY1AP0EM706906</mno>
+		<model>9000</model>
+		<year>1989</year>
+		<maker>Saab</maker>
+		<price>4019</price>
+	</record>
+	<record>
+		<mno>WA1YD54B72N082860</mno>
+		<model>LeSabre</model>
+		<year>1990</year>
+		<maker>Buick</maker>
+		<price>1838</price>
+	</record>
+	<record>
+		<mno>JTDJTUD37DD772386</mno>
+		<model>Mark VIII</model>
+		<year>1994</year>
+		<maker>Lincoln</maker>
+		<price>1421</price>
+	</record>
+</root>

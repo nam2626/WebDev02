@@ -28,6 +28,11 @@ public class XMLFileParse {
 			//person이 가지고 있는 하위 태그(노드)들을 가져옴
 			NodeList childNodes = personTagList.item(i).getChildNodes(); 
 			for(int j = 0; j < childNodes.getLength(); j++) {
+				//gender에 있는 속성값 읽기
+				if(childNodes.item(j).getAttributes() != null) {
+					if(childNodes.item(j).getAttributes().getNamedItem("value") != null)
+						System.out.println(childNodes.item(j).getAttributes().getNamedItem("value").getNodeValue());
+				}
 				switch(childNodes.item(j).getNodeName()) {
 				case "name":
 				case "age":
