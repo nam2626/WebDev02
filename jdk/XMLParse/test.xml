@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response>
+	<header>
+		<resultCode>00</resultCode>
+		<resultMsg>NORMAL SERVICE.</resultMsg>
+	</header>
+	<body>
+		<items>
+			<item>
+				<createDt>2022-03-03 09:08:34.548</createDt>
+				<deathCnt>8394</deathCnt>
+				<decideCnt>3691488</decideCnt>
+				<seq>806</seq>
+				<stateDt>20220303</stateDt>
+				<stateTime>00:00</stateTime>
+				<updateDt>null</updateDt>
+			</item>
+		</items>
+		<numOfRows>10</numOfRows>
+		<pageNo>1</pageNo>
+		<totalCount>1</totalCount>
+	</body>
+</response>
