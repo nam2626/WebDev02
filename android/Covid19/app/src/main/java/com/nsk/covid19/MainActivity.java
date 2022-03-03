@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... strings) {
-
+            String result = "";
             try {
                 StringBuilder urlBuilder = new StringBuilder("http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson");
                 urlBuilder.append("?" + URLEncoder.encode("serviceKey","UTF-8") + "=hpOVfNem4MVro1QdBZTMTq%2FMZs%2B8yylSvxNQlqPiEQec%2Bo99WRRbIvrVqLltto5W0TmluoxR7uQHpHFNZ146qg%3D%3D");
@@ -81,9 +81,12 @@ public class MainActivity extends AppCompatActivity {
                             sdf = new SimpleDateFormat("yyyy-MM-dd");
                             dateList.add(sdf.format(date));
                         }
-
                     }
                     Log.d("Covid19","----------------------");
+                }
+                for(int i=0;i<decideList.size()-1;i++){
+                    result += "날짜 : "+dateList.get(i) +"\n";
+                    result += "확진자수 : "+(decideList.get(i)-decideList.get(i+1))+"\n\n";
                 }
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
@@ -97,14 +100,13 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-
-            return null;
+            return result;
         }
 
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-
+            txtResult.setText(s);
         }
     }
 }
