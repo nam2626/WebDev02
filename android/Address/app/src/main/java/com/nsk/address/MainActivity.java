@@ -9,11 +9,12 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     Button btnRegister;
+    DBHelper dbHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        dbHelper = new DBHelper(this);
         btnRegister = findViewById(R.id.main_btn_register);
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
