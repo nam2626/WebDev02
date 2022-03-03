@@ -34,13 +34,13 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Corona corona = new Corona();
+                Covid19 corona = new Covid19();
                 corona.execute();
             }
         });
     }
 
-    public class Corona extends AsyncTask<String, String, String>{
+    public class Covid19 extends AsyncTask<String, String, String>{
 
         @Override
         protected String doInBackground(String... strings) {
