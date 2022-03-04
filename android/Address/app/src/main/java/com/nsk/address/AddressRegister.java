@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AddressRegister extends AppCompatActivity {
     DBHelper dbHelper;
@@ -32,6 +33,7 @@ public class AddressRegister extends AppCompatActivity {
                 name = edtName.getText().toString();
                 tel = edtTel.getText().toString();
                 dbHelper.add(new AddressVO(name, tel));
+                Toast.makeText(AddressRegister.this,"주소록 등록이 완료되었습니다.",Toast.LENGTH_SHORT).show();
             }
         });
     }

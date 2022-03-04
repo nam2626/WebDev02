@@ -39,7 +39,7 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public void add(AddressVO vo){
+    public long add(AddressVO vo){
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -49,6 +49,7 @@ public class DBHelper extends SQLiteOpenHelper {
         long result = db.insert("Address",null,values); //데이터 삽입
         Log.d(TAG, "add: "+result);
         db.close();
+        return result;
     }
 
 }
