@@ -21,10 +21,10 @@ public class AddressRegister extends AppCompatActivity {
         setContentView(R.layout.activity_address_register);
         dbHelper = new DBHelper(getApplicationContext());
 
-        edtName = findViewById(R.id.register_edt_name);
-        edtTel = findViewById(R.id.register_edt_tel);
-        btnAdd = findViewById(R.id.register_btn_add);
-        btnCancel = findViewById(R.id.register_btn_cancel);
+        edtName = findViewById(R.id.update_edt_name);
+        edtTel = findViewById(R.id.update_edt_tel);
+        btnAdd = findViewById(R.id.update_btn_update);
+        btnCancel = findViewById(R.id.update_btn_cancel);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
