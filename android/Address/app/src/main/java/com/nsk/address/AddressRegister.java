@@ -34,6 +34,7 @@ public class AddressRegister extends AppCompatActivity {
                 tel = edtTel.getText().toString();
                 dbHelper.add(new AddressVO(name, tel));
                 Toast.makeText(AddressRegister.this,"주소록 등록이 완료되었습니다.",Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
     }
