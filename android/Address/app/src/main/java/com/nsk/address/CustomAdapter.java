@@ -47,8 +47,8 @@ public class CustomAdapter extends BaseAdapter {
         TextView name = view.findViewById(R.id.list_txt_name);
         name.setText(list.get(i).getName());
         TextView tel = view.findViewById(R.id.list_txt_tel);
-        name.setText(list.get(i).getTel());
-        
+        tel.setText(list.get(i).getTel());
+
         return view;
     }
 }
