@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -32,6 +33,18 @@ public class MainActivity extends AppCompatActivity {
         adapter = new CustomAdapter();
         listAddress = findViewById(R.id.list_address);
         listAddress.setAdapter(adapter);
+        listAddress.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(MainActivity.this,AddressUpdateActivity.class);
+                AddressVO vo = (AddressVO) adapter.getItem(i);
+                if(vo == null) return;
+                intent.putExtra("name",vo.getName());
+                intent.putExtra("tel",vo.getTel());
+                intent.putExtra("id",vo.getId());
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
