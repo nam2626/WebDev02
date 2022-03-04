@@ -1,5 +1,6 @@
 package com.nsk.address;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -37,4 +38,17 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(sql);
         onCreate(sqLiteDatabase);
     }
+
+    public void add(AddressVO vo){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("name",vo.getName());
+        values.put("tel",vo.getTel());
+
+        long result = db.insert("Address",null,values); //데이터 삽입
+        Log.d(TAG, "add: "+result);
+        db.close();
+    }
+
 }
