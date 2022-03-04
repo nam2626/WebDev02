@@ -34,7 +34,9 @@ public class AddressUpdateActivity extends AppCompatActivity {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                DBHelper dbHelper = new DBHelper(getApplicationContext());
+                dbHelper.delete(id);
+                finish();
             }
         });
         Button btnCancel = findViewById(R.id.update_btn_cancel);
