@@ -71,6 +71,22 @@ public class DBHelper extends SQLiteOpenHelper {
         return list;
     }
 
+    public List<AddressVO> selectAddressVO(String search){
+        ArrayList<AddressVO> list = new ArrayList<AddressVO>();
+        String sql = "select * from address where name like '%' || ? || '%' or tel like '%' || ? || '%'";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(sql,new String[]{search,search});
+        Log.d(TAG, "selectAddressVO: "+cursor.getCount());
+        if(cursor.moveToFirst()){
+            do{
+                list.add(new AddressVO(cursor.getInt(0),cursor.getString(1),cursor.getString(2)));
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return list;
+    }
+
     public void delete(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
         int result = db.delete("address","id=?",new String[]{String.valueOf(id)});
