@@ -77,4 +77,8 @@ public class DBHelper extends SQLiteOpenHelper {
         Log.d(TAG, "delete: "+result);
         db.close();
     }
+
+    public void update(AddressVO vo) {
+        SQLiteDatabase db = this.getWritableDatabase();
+    }
 }

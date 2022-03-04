@@ -27,7 +27,10 @@ public class AddressUpdateActivity extends AppCompatActivity {
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                DBHelper dbHelper = new DBHelper(getApplicationContext());
+                AddressVO vo = new AddressVO(id, edtName.getText().toString(), edtTel.getText().toString());
+                dbHelper.update(vo);
+                finish();
             }
         });
         Button btnDelete = findViewById(R.id.update_btn_delete);
