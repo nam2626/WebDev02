@@ -80,5 +80,11 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public void update(AddressVO vo) {
         SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("name",vo.getName());
+        values.put("tel",vo.getTel());
+        int count = db.update("address",values,"id=?",new String[]{String.valueOf(vo.getId())});
+        Log.d(TAG, "update: "+count);
+        db.close();
     }
 }
