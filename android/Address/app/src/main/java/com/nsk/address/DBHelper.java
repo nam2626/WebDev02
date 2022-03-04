@@ -13,7 +13,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "Address";
     private final String TAG = "DBHelper";
     public DBHelper(Context context) {
-        super(context, DB_NAME, null, 2);
+        super(context, DB_NAME, null, 3);
     }
 
     @Override
