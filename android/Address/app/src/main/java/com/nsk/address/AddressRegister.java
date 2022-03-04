@@ -25,6 +25,12 @@ public class AddressRegister extends AppCompatActivity {
         edtTel = findViewById(R.id.update_edt_tel);
         btnAdd = findViewById(R.id.update_btn_update);
         btnCancel = findViewById(R.id.update_btn_cancel);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override

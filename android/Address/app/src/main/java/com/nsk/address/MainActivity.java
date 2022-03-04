@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import java.util.List;
@@ -17,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     DBHelper dbHelper;
     ListView listAddress;
     CustomAdapter adapter;
+    ImageButton btnSearch;
+    EditText edtSearch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +47,19 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("tel",vo.getTel());
                 intent.putExtra("id",vo.getId());
                 startActivity(intent);
+            }
+        });
+        edtSearch = findViewById(R.id.main_edt_search);
+        btnSearch = findViewById(R.id.main_btn_search);
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                List<AddressVO> list =  dbHelper.selectAddressVO(edtSearch.getText().toString());
+                adapter.clearList();
+                for(int i=0;i<list.size();i++){
+                    adapter.addItem(list.get(i));
+                }
+                adapter.notifyDataSetChanged();
             }
         });
     }
